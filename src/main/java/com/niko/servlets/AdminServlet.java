@@ -2,7 +2,6 @@ package com.niko.servlets;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;

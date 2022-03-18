@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.niko.beans.Card;
-import com.niko.beans.Post;
 import com.niko.dao.ApplicationDao;
 
 /**
