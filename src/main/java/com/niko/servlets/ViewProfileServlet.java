@@ -11,24 +11,26 @@ import javax.servlet.http.HttpServletResponse;
 import com.niko.beans.User;
 import com.niko.dao.ApplicationDao;
 
-
 public class ViewProfileServlet extends HttpServlet {
-       
 
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		System.out.println("UserName in servlet: " + request.getSession().getAttribute("username"));
 		ApplicationDao dao = new ApplicationDao();
 		Connection connection = (Connection) getServletContext().getAttribute("dbconnection");
-		
+
 		String username = (String) request.getSession().getAttribute("username");
+
+		User user = new User();
 		
-		User user = dao.getProfileDetails(username, connection);
-		
+		if (connection != null) {
+			user = dao.getProfileDetails(username, connection);
+		}
 		request.setAttribute("user", user);
 		request.getRequestDispatcher("/html/profile.jsp").forward(request, response);
-		
+
 	}
 
 }

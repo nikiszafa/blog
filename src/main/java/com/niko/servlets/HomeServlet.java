@@ -2,6 +2,7 @@ package com.niko.servlets;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -19,21 +20,23 @@ import com.niko.dao.ApplicationDao;
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		Connection connection = (Connection) getServletContext().getAttribute("dbconnection");
 		ApplicationDao dao = new ApplicationDao();
-		List<Card> cards = dao.getCards(connection);
-		request.setAttribute("cards", cards);
-		for(Card mes:cards) {
-			System.out.println(mes.getTitle());
+		
+		List<Card> cards = new ArrayList<Card>();
+		
+		if (connection != null) {
+			cards = dao.getCards(connection);
 		}
+		request.setAttribute("cards", cards);
 		request.getRequestDispatcher("/html/index.jsp").forward(request, response);
 	}
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		
 	}
 
 }

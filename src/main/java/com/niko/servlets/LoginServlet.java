@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
 		dispatcher.include(request, response);
 
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -33,12 +33,16 @@ public class LoginServlet extends HttpServlet {
 		ApplicationDao dao = new ApplicationDao();
 		Connection connection = (Connection) getServletContext().getAttribute("dbconnection");
 
-		boolean isValidUser = dao.validateUser(username, password, connection);
+		boolean isValidUser = false;
+
+		if (connection != null) {
+			isValidUser = dao.validateUser(username, password, connection);
+		}
 
 		if (isValidUser) {
 			System.out.println("User valid");
 			HttpSession session = request.getSession();
-			session.setAttribute("username",username);
+			session.setAttribute("username", username);
 			response.sendRedirect("/blog/HomeServlet");
 		} else {
 			System.out.println("User invalid");

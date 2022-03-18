@@ -17,14 +17,16 @@ import com.niko.dao.ApplicationDao;
 
 public class AdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		request.getRequestDispatcher("/html/admin.jsp").forward(request, response);
 
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		String title = request.getParameter("title");
 		String autor = request.getParameter("autor");
@@ -39,16 +41,16 @@ public class AdminServlet extends HttpServlet {
 		}
 		java.sql.Date sql = new java.sql.Date(datef.getTime());
 		String text = request.getParameter("text");
-		Post post = new Post(title,text, autor, sql, img);
-		
+		Post post = new Post(title, text, autor, sql, img);
+
 		ApplicationDao dao = new ApplicationDao();
 		Connection connection = (Connection) getServletContext().getAttribute("dbconnection");
 
-		dao.addPost(post, connection);
-
+		if (connection != null) {
+			dao.addPost(post, connection);
+		}
 		response.sendRedirect("/blog/BlogServlet");
 
-		
 	}
 
 }
