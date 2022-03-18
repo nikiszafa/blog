@@ -39,14 +39,10 @@
 	</servlet>
 	<servlet>
 		<servlet-name>DeleteCardServlet</servlet-name>
-		<display-name>DeleteCardServlet</display-name>
-		<description></description>
 		<servlet-class>com.niko.servlets.DeleteCardServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>AddCardServlet</servlet-name>
-		<display-name>AddCardServlet</display-name>
-		<description></description>
 		<servlet-class>com.niko.servlets.AddCardServlet</servlet-class>
 	</servlet>
 
