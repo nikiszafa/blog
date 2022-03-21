@@ -1,13 +1,35 @@
 package com.niko.beans;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+
+@Entity
+@Table(name="cards")
 public class Card {
-	private int cardId; 
-	private String imgPath;
-	private String title;
-	private String content;
-	private String buttonText;
-	private String buttonLink;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="card_id")
+	private int cardId; 
+	
+	@Column(name="card_imgpath")
+	private String imgPath;
+	
+	@Column(name="card_title")
+	private String title;
+	
+	@Column(name = "card_content")
+	private String content;
+	
+	@Column(name="card_buttontext")
+	private String buttonText;
+	
+	@Column(name="card_buttonLink")
+	private String buttonLink;
 	
 	
 	public Card(String imgPath, String title, String content, String buttonText, String buttonLink) {

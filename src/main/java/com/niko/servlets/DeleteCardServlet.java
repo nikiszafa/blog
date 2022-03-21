@@ -1,7 +1,6 @@
 package com.niko.servlets;
 
 import java.io.IOException;
-import java.sql.Connection;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,9 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.niko.dao.ApplicationDao;
 
-/**
- * Servlet implementation class DeleteCardServlet
- */
+
 public class DeleteCardServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -26,11 +23,9 @@ public class DeleteCardServlet extends HttpServlet {
 			throws ServletException, IOException {
 		int cardId = Integer.parseInt(request.getParameter("cardId"));
 		ApplicationDao dao = new ApplicationDao();
-		Connection connection = (Connection) getServletContext().getAttribute("dbconnection");
 
-		if (connection != null) {
-			dao.deleteCard(cardId, connection);
-		}
+		dao.deleteCard(cardId);
+
 		response.sendRedirect("/blog/HomeServlet");
 	}
 

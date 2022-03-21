@@ -2,14 +2,38 @@ package com.niko.beans;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "post")
 public class Post {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="post_id")
 	private int postId;
+	
+	@Column(name="post_title")
 	private String postTitle;
+	
+	@Column(name="post_content")
 	private String postContent;
+	
+	@Column(name = "post_author")
 	private String author;
+	
+	@Column(name = "post_publish_date")
 	private Date publishDate;
+	
+	@Column(name = "post_is_visible")
 	private boolean isVisible=true;
+	
+	@Column(name = "post_img")
 	private String postImg;
 	
 	

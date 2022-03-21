@@ -1,7 +1,6 @@
 package com.niko.servlets;
 
 import java.io.IOException;
-import java.sql.Connection;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,21 +32,14 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 
 		ApplicationDao dao = new ApplicationDao();
-		Connection connection = (Connection) getServletContext().getAttribute("dbconnection");
 
-		boolean isValidUser = false;
-
-		if (connection != null) {
-			isValidUser = dao.validateUser(username, password, connection);
-		}
+		boolean isValidUser = dao.validateUser(username, password);
 
 		if (isValidUser) {
-			System.out.println("User valid");
 			HttpSession session = request.getSession();
 			session.setAttribute("username", username);
 			response.sendRedirect("/blog/HomeServlet");
 		} else {
-			System.out.println("User invalid");
 			String errorMessage = "Invalid credentials";
 			request.setAttribute("error", errorMessage);
 			request.getRequestDispatcher("html/login.jsp").forward(request, response);

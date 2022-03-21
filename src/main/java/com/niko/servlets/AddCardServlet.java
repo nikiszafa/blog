@@ -1,7 +1,6 @@
 package com.niko.servlets;
 
 import java.io.IOException;
-import java.sql.Connection;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -30,11 +29,8 @@ public class AddCardServlet extends HttpServlet {
 		Card card = new Card(imgPath, title, content, buttonText, buttonLink);
 
 		ApplicationDao dao = new ApplicationDao();
-		Connection connection = (Connection) getServletContext().getAttribute("dbconnection");
 
-		if (connection != null) {
-			dao.addCard(card, connection);
-		}
+		dao.addCard(card);
 		
 		response.sendRedirect("/blog/HomeServlet");
 

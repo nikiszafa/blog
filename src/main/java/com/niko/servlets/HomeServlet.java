@@ -1,8 +1,7 @@
 package com.niko.servlets;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -21,14 +20,10 @@ public class HomeServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Connection connection = (Connection) getServletContext().getAttribute("dbconnection");
 		ApplicationDao dao = new ApplicationDao();
 		
-		List<Card> cards = new ArrayList<Card>();
+		List<Card> cards = dao.getCards();
 		
-		if (connection != null) {
-			cards = dao.getCards(connection);
-		}
 		request.setAttribute("cards", cards);
 		request.getRequestDispatcher("/html/index.jsp").forward(request, response);
 	}

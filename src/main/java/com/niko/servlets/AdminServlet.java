@@ -1,7 +1,6 @@
 package com.niko.servlets;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -43,11 +42,9 @@ public class AdminServlet extends HttpServlet {
 		Post post = new Post(title, text, autor, sql, img);
 
 		ApplicationDao dao = new ApplicationDao();
-		Connection connection = (Connection) getServletContext().getAttribute("dbconnection");
-
-		if (connection != null) {
-			dao.addPost(post, connection);
-		}
+		
+		dao.addPost(post);
+		
 		response.sendRedirect("/blog/BlogServlet");
 
 	}
