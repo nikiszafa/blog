@@ -12,9 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.niko.beans.Card;
 import com.niko.dao.ApplicationDao;
 
-/**
- * Servlet implementation class HomeServlet
- */
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
