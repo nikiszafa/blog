@@ -2,41 +2,45 @@ package com.niko.dao;
 
 import java.util.List;
 
-import javax.ejb.Stateless;
+import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 
 import com.niko.beans.Post;
 
-@Stateless
+@Stateful
 public class PostDao {
-	@PersistenceContext
-	EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("primary");
-	EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+	@PersistenceContext(unitName = "primary", type = PersistenceContextType.EXTENDED)
+	private EntityManager entityManager;
 
 	public void addPost(Post post) {
 
-		try {
-			entityManager.getTransaction().begin();
+		
+		//Dlaczego to nie dziala????
+//		try {
+//			entityManager.getTransaction().begin();
 			entityManager.persist(post);
-			entityManager.getTransaction().commit();
-		} catch (Exception e) {
-			entityManager.getTransaction().rollback();
-		}
+//			entityManager.getTransaction().commit();
+//		} catch (Exception e) {
+//			entityManager.getTransaction().rollback();
+//		}
 
 	}
 	
 	public void deletePost(int postId) {
-		try {
-			entityManager.getTransaction().begin();
+		
+		//Dlaczego to nie dziala????
+//		try {
+//			entityManager.getTransaction().begin();
 			Post post = entityManager.find(Post.class, postId);
 			entityManager.remove(post);
-			entityManager.getTransaction().commit();
-		} catch (Exception e) {
-			entityManager.getTransaction().rollback();
-		}
+//			entityManager.getTransaction().commit();
+//		} catch (Exception e) {
+//			entityManager.getTransaction().rollback();
+//		}
 	}
 	
 	public List<Post> getPosts() {

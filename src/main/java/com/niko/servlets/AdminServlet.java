@@ -5,16 +5,20 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.niko.beans.Post;
-import com.niko.dao.ApplicationDao;
+import com.niko.dao.PostDao;
 
 public class AdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	@EJB
+	PostDao postDao;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -41,9 +45,7 @@ public class AdminServlet extends HttpServlet {
 		String text = request.getParameter("text");
 		Post post = new Post(title, text, autor, sql, img);
 
-		ApplicationDao dao = new ApplicationDao();
-		
-		dao.addPost(post);
+		postDao.addPost(post);
 		
 		response.sendRedirect("/blog/BlogServlet");
 

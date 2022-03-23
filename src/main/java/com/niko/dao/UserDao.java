@@ -1,19 +1,18 @@
 package com.niko.dao;
 
-import javax.ejb.Stateless;
+import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 
 import com.niko.beans.User;
 
-@Stateless
+@Stateful
 public class UserDao {
 
-	@PersistenceContext
-	EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("primary");
-	EntityManager entityManager = entityManagerFactory.createEntityManager();
+	@PersistenceContext(unitName = "primary", type = PersistenceContextType.EXTENDED)
+	private EntityManager entityManager;
 
 	public boolean validateUser(String username, String password) {
 		boolean isValidUser = false;
