@@ -8,6 +8,8 @@ import javax.persistence.PersistenceContextType;
 
 @Stateless
 public class EntityManagerProvider {
+	
+	//Czy nie powinienem skorzystac z czegos takiego??
 
 	@PersistenceContext(unitName = "primary", type = PersistenceContextType.EXTENDED)
 	private EntityManager entityManager;

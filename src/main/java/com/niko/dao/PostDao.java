@@ -18,31 +18,35 @@ public class PostDao {
 
 	public void addPost(Post post) {
 
-		
-		//Dlaczego to nie dziala????
+		entityManager.persist(post);
+
+		// Dlaczego to nie dziala????
 //		try {
 //			entityManager.getTransaction().begin();
-			entityManager.persist(post);
+//			entityManager.persist(post);
 //			entityManager.getTransaction().commit();
 //		} catch (Exception e) {
 //			entityManager.getTransaction().rollback();
 //		}
 
 	}
-	
+
 	public void deletePost(int postId) {
+
+		Post post = entityManager.find(Post.class, postId);
+		entityManager.remove(post);
 		
-		//Dlaczego to nie dziala????
+		// Dlaczego to nie dziala????
 //		try {
 //			entityManager.getTransaction().begin();
-			Post post = entityManager.find(Post.class, postId);
-			entityManager.remove(post);
+//			Post post = entityManager.find(Post.class, postId);
+//			entityManager.remove(post);
 //			entityManager.getTransaction().commit();
 //		} catch (Exception e) {
 //			entityManager.getTransaction().rollback();
 //		}
 	}
-	
+
 	public List<Post> getPosts() {
 		return entityManager.createQuery("from Post order by postId desc").getResultList();
 	}
