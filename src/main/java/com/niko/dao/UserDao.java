@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContextType;
 
 import com.niko.beans.User;
 
+//Czy to jest odpowiedni rodzaj???
 @Stateful
 public class UserDao {
 

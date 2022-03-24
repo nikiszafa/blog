@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 
+//Czy to jest odpowiedni rodzaj???
 @Stateless
 public class EntityManagerProvider {
 	

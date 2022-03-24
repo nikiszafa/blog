@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContextType;
 
 import com.niko.beans.Card;
 
+//Czy to jest odpowiedni rodzaj???
 @Stateful
 public class CardDao {
 

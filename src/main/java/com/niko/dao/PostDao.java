@@ -10,6 +10,7 @@ import javax.persistence.PersistenceContextType;
 
 import com.niko.beans.Post;
 
+//Czy to jest odpowiedni rodzaj???
 @Stateful
 public class PostDao {
 
