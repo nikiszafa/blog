@@ -119,5 +119,9 @@
 	<listener>
 		<listener-class>com.niko.listeners.ApplicationListener</listener-class>
 	</listener>
+	
+	<welcome-file-list>
+	<welcome-file>/HomeServlet</welcome-file>
+	</welcome-file-list>
 
 </web-app>
