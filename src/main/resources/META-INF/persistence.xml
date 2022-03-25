@@ -13,6 +13,7 @@
 		<class>com.niko.beans.Card</class>
 		<class>com.niko.beans.Post</class>
 		<class>com.niko.beans.User</class>
+		<class>com.niko.beans.GalleryImage</class>
 		<properties>
 			<!-- Properties for Hibernate -->
 			<property name="hibernate.show_sql" value="false" />

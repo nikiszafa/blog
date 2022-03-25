@@ -24,7 +24,6 @@
 						me</a></li>
 				<li class="nav-item"><a class="nav-link" href="BlogServlet">Blog</a>
 				</li>
-
 				<li class="nav-item"><a class="nav-link" href="GalleryServlet">Gallery</a>
 				</li>
 
@@ -73,30 +72,29 @@
 
 	<div class="container mt-5">
 		<div class="row">
-
-			<c:forEach items="${cards}" var="card">
-				<div class="col-sm-4">
-					<div class="card text-center" style="width: 18rem;">
-						<img src="${card.imgPath}" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">${card.title}</h5>
-							<p class="card-text">${card.content}</p>
-							<a href="${card.buttonLink}" class="btn btn-primary">${card.buttonText}</a>
-							<c:if test="${not empty username }">
-								<p></p>
-								<form action="DeleteCardServlet" method="post">
-									<button type="submit" value="${card.cardId}" name="cardId"
-										class="btn btn-danger">Delete Card</button>
-								</form>
-							</c:if>
-						</div>
+			<c:forEach items="${galleryImages}" var="image">
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<a href="${image.galleryImagePath}"> <img
+							src="${image.galleryImagePath}" alt="Lights" style="width: 100%">
+							<div class="caption">
+								<p>${image.galleryImageDescription}</p>
+							</div>
+						</a>
 					</div>
-					<p></p>
+					<c:if test="${not empty username }">
+						<form action="DeleteGalleryImageServlet" method="post">
+						<input type="hidden" value="${image.galleryImagePath}" name="imagePath" />
+						<input type="hidden" value="${image.galleryFileName}" name="imageName" />
+							<button type="submit" value="${image.imageId}" name="imageId"
+								class="btn btn-danger">Delete Image</button>
+						</form>
+						<br>
+						<p></p>
+					</c:if>
 				</div>
 
 			</c:forEach>
-
-
 		</div>
 	</div>
 

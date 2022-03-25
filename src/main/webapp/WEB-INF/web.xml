@@ -45,6 +45,16 @@
 		<servlet-name>AddCardServlet</servlet-name>
 		<servlet-class>com.niko.servlets.AddCardServlet</servlet-class>
 	</servlet>
+	
+	<servlet>
+		<servlet-name>UploadServlet</servlet-name>
+		<servlet-class>com.niko.servlets.UploadServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>GalleryServlet</servlet-name>
+		<servlet-class>com.niko.servlets.GalleryServlet</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>HomeServlet</servlet-name>
@@ -53,7 +63,7 @@
 
 	<servlet-mapping>
 		<servlet-name>BlogServlet</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>/BlogServlet</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
@@ -84,6 +94,16 @@
 	<servlet-mapping>
 		<servlet-name>AddCardServlet</servlet-name>
 		<url-pattern>/AddCardServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>UploadServlet</servlet-name>
+		<url-pattern>/UploadServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>GalleryServlet</servlet-name>
+		<url-pattern>/GalleryServlet</url-pattern>
 	</servlet-mapping>
 
 	<filter>

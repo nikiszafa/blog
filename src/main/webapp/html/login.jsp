@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Bootstrap 5 Example</title>
+<title>Nikodem Blog</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link
@@ -23,6 +23,9 @@
 				<li class="nav-item"><a class="nav-link" href="HomeServlet">About
 						me</a></li>
 				<li class="nav-item"><a class="nav-link" href="BlogServlet">Blog</a>
+				</li>
+
+				<li class="nav-item"><a class="nav-link" href="GalleryServlet">Gallery</a>
 				</li>
 
 				<c:if test="${empty username}">
@@ -48,19 +51,25 @@
 	</nav>
 
 	<header class="bg-primary bg-gradient text-white py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 text-left text-md-center mb-3">
-        <img class="rounded-circle img-fluid" src="https://www.looper.com/img/gallery/the-other-back-to-the-future-reference-you-missed-in-rick-and-morty/l-intro-1618319353.jpg" alt="Profile Photo" />
-      </div>
-      <div class="col-md-9">
-        <h1>Nikodem</h1>
-        <h5>New IT Blogger </h5>
-        <p class="border-top pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed odio lacus, sollicitudin in dolor at, consequat volutpat ante. Integer quis consequat turpis, quis porta orci. Proin tincidunt volutpat faucibus. Suspendisse ac nisl purus suspendisse eleifend interdum orci non pharetra. </p>
-      </div>       
-    </div>        
-  </div>
-</header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 text-left text-md-center mb-3">
+					<img class="rounded-circle img-fluid"
+						src="https://www.looper.com/img/gallery/the-other-back-to-the-future-reference-you-missed-in-rick-and-morty/l-intro-1618319353.jpg"
+						alt="Profile Photo" />
+				</div>
+				<div class="col-md-9">
+					<h1>Nikodem</h1>
+					<h5>New IT Blogger</h5>
+					<p class="border-top pt-3">Lorem ipsum dolor sit amet,
+						consectetur adipiscing elit. Sed odio lacus, sollicitudin in dolor
+						at, consequat volutpat ante. Integer quis consequat turpis, quis
+						porta orci. Proin tincidunt volutpat faucibus. Suspendisse ac nisl
+						purus suspendisse eleifend interdum orci non pharetra.</p>
+				</div>
+			</div>
+		</div>
+	</header>
 
 	<div class="container mt-3">
 		<div class="row">

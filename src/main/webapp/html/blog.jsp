@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Bootstrap 5 Example</title>
+<title>Nikodem Blog</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link
@@ -23,6 +23,9 @@
 				<li class="nav-item"><a class="nav-link" href="HomeServlet">About
 						me</a></li>
 				<li class="nav-item"><a class="nav-link" href="BlogServlet">Blog</a>
+				</li>
+				
+								<li class="nav-item"><a class="nav-link" href="GalleryServlet">Gallery</a>
 				</li>
 
 				<c:if test="${empty username}">
