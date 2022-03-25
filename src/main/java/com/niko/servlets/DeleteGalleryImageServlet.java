@@ -27,7 +27,6 @@ public class DeleteGalleryImageServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int imageId = Integer.parseInt(request.getParameter("imageId"));
-		String imagePath = request.getParameter("imagePath");
 		String imageName = request.getParameter("imageName");
 		
 		File file = new File(getServletContext().getRealPath("") + "\\img\\" + imageName);

@@ -1,6 +1,5 @@
 package com.niko.servlets;
 
-import java.io.File;
 import java.io.IOException;
 
 import javax.ejb.EJB;
