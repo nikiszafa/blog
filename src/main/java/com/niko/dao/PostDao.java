@@ -51,5 +51,9 @@ public class PostDao {
 	public List<Post> getPosts() {
 		return entityManager.createQuery("from Post order by postId desc").getResultList();
 	}
+	
+	public Post getPost(int postId) {
+		return entityManager.find(Post.class, postId);
+	}
 
 }
