@@ -1,4 +1,4 @@
-package com.niko.blog.restserver.rest;
+package com.blog.niko.restserver.rest;
 
 
 import javax.ejb.EJB;
@@ -12,8 +12,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.niko.blog.restserver.dao.PostDao;
-import com.niko.blog.restserver.domain.Post;
+import com.blog.niko.restserver.dao.PostDao;
+import com.blog.niko.restserver.domain.Post;
 
 @Stateless
 @Path("/posts")

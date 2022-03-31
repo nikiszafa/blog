@@ -1,8 +1,8 @@
-package com.niko.blog.restserver.dao;
+package com.blog.niko.restserver.dao;
 
 import java.util.List;
 
-import com.niko.blog.restserver.domain.Card;
+import com.blog.niko.restserver.domain.Card;
 
 public interface CardDao {
 	

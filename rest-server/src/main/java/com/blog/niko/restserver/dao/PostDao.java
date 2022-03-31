@@ -1,8 +1,8 @@
-package com.niko.blog.restserver.dao;
+package com.blog.niko.restserver.dao;
 
 import java.util.List;
 
-import com.niko.blog.restserver.domain.Post;
+import com.blog.niko.restserver.domain.Post;
 
 public interface PostDao {
 	

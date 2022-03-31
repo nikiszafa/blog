@@ -1,4 +1,4 @@
-package com.niko.blog.restserver.domain;
+package com.blog.niko.restserver.domain;
 
 import java.io.Serializable;
 import java.sql.Date;

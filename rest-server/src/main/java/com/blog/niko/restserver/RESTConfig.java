@@ -1,4 +1,4 @@
-package com.niko.blog.restserver;
+package com.blog.niko.restserver;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

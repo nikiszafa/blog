@@ -1,4 +1,4 @@
-package com.niko.blog.restserver.dao;
+package com.blog.niko.restserver.dao;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 
-import com.niko.blog.restserver.domain.Card;
+import com.blog.niko.restserver.domain.Card;
 
 @Stateful
 public class CardDaoBean implements CardDao{
