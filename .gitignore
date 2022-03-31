@@ -13,3 +13,8 @@ buildNumber.properties
 /.project
 /.tern-project
 /.settings
+/ear/.settings
+/ear/.classpath
+/rest-server/.settings
+/rest-server/.classpath
+/rest-server/.project
