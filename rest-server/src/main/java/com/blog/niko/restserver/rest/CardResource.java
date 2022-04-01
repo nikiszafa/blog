@@ -12,6 +12,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.blog.niko.restserver.dao.CardDao;
+import com.blog.niko.restserver.dao.exceptions.IDNotFoundException;
 import com.blog.niko.restserver.domain.Card;
 
 @Stateless
@@ -20,10 +21,10 @@ public class CardResource {
 
 	@EJB
 	private CardDao cardDao;
-	
+
 	@GET
 	@Path("/ping")
-	public Response ping() {		
+	public Response ping() {
 		return Response.ok().entity("Service online").build();
 	}
 
@@ -42,12 +43,20 @@ public class CardResource {
 		cardDao.addCard(card);
 		return Response.ok(card).build();
 	}
-	
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("{id:[0-9]+}")
-	public Response getCardById(final @PathParam("id") int id) {
-		return Response.ok(cardDao.getCard(id)).build();
+	public Response getCardById(final @PathParam("id") int id) throws IDNotFoundException {
+
+		Card card = cardDao.getCard(id);
+
+		if (card != null) {
+			return Response.ok(card).build();
+		}
+		
+		throw new IDNotFoundException();
+
 	}
 
 }

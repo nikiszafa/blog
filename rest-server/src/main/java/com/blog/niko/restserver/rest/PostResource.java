@@ -12,8 +12,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-
 import com.blog.niko.restserver.dao.PostDao;
+import com.blog.niko.restserver.dao.exceptions.IDNotFoundException;
 import com.blog.niko.restserver.domain.Post;
 
 @Stateless
@@ -46,8 +46,16 @@ public class PostResource {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("{id:[0-9]+}")
-	public Response getPostById(final @PathParam("id") int id) {
-		return Response.ok(postDao.getPost(id)).build();
+	public Response getPostById(final @PathParam("id") int id) throws IDNotFoundException {
+
+		Post post = postDao.getPost(id);
+
+		if (post != null) {
+			return Response.ok(post).build();
+		}
+
+		throw new IDNotFoundException();
+
 	}
 
 	@PUT

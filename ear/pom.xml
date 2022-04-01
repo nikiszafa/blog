@@ -22,6 +22,14 @@
 			<version>0.0.1-SNAPSHOT</version>
 			<type>war</type>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.blog.niko</groupId>
+			<artifactId>rest-client</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -38,6 +46,12 @@
 								<artifactId>rest-server</artifactId>
 								<uri>rest-server-0.0.1-SNAPSHOT.war</uri>
 								<contextRoot>/application</contextRoot>
+							</webModule>
+							<webModule>
+								<groupId>com.blog.niko</groupId>
+								<artifactId>rest-client</artifactId>
+								<uri>rest-client-0.0.1-SNAPSHOT.war</uri>
+								<contextRoot>/client</contextRoot>
 							</webModule>
 						</modules>
 					</configuration>

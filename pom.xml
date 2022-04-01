@@ -16,6 +16,7 @@
 	<modules>
 		<module>ear</module>
 		<module>rest-server</module>
+		<module>rest-client</module>
 	</modules>
 	
 	
