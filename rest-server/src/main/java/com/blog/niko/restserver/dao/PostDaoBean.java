@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 
+
 import com.blog.niko.restserver.domain.Post;
 
 @Stateful
@@ -35,6 +36,16 @@ public class PostDaoBean implements PostDao{
 
 	public Post getPost(int postId) {
 		return entityManager.find(Post.class, postId);
+	}
+	
+	public void updatePost(Post post, int postId) {
+		Post postOrigin = entityManager.find(Post.class, postId);
+		postOrigin.setAuthor(post.getAuthor());
+		postOrigin.setPostContent(post.getPostContent());
+		postOrigin.setPostImg(post.getPostImg());
+		postOrigin.setPostTitle(post.getPostTitle());
+		postOrigin.setPublishDate(post.getPublishDate());
+		entityManager.merge(postOrigin);
 	}
 
 }

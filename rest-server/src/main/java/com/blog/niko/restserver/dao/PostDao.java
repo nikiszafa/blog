@@ -10,6 +10,7 @@ public interface PostDao {
 	void deletePost(int postId);
 	List<Post> getPosts();
 	Post getPost(int postId);
+	void updatePost(Post post, int id);
 	
 
 }

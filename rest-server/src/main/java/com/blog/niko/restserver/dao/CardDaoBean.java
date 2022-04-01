@@ -33,4 +33,9 @@ public class CardDaoBean implements CardDao{
 		return entityManager.createQuery("from Card").getResultList();
 
 	}
+	
+	public Card getCard(int cardId) {
+		return entityManager.find(Card.class, cardId);
+
+	}
 }
