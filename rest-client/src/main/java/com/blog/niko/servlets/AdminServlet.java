@@ -43,12 +43,13 @@ public class AdminServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		java.sql.Date sql = new java.sql.Date(datef.getTime());
+		System.out.println("DATA: " + sql );
 		String text = request.getParameter("text");
 		Post post = new Post(title, text, autor, sql, img);
 
 		postBean.addPost(post);
 		
-		response.sendRedirect("/blog/BlogServlet");
+		response.sendRedirect("/client/BlogServlet");
 
 	}
 

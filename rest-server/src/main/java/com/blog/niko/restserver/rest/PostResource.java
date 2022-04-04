@@ -40,6 +40,7 @@ public class PostResource {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response addPost(final Post post) {
 		postDao.addPost(post);
+		System.out.println("POST DAO");
 		return Response.ok(post).build();
 	}
 
@@ -65,6 +66,15 @@ public class PostResource {
 	public Response updatePost(final @PathParam("id") int postId, Post post) {
 		postDao.updatePost(post, postId);
 		return Response.ok(post).build();
+
+	}
+
+	@POST
+	@Path("{id}")
+	public Response deletePost(final @PathParam("id") int postId) {
+		System.out.println("DELETE POST" + postId);
+		postDao.deletePost(postId);
+		return Response.ok(postId).build();
 
 	}
 

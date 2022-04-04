@@ -8,6 +8,7 @@ import javax.annotation.PreDestroy;
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
@@ -19,7 +20,7 @@ import com.blog.niko.domain.Post;
 public class PostServiceImpl implements PostService {
 
 	private static final String API_URL = "http://localhost:8080/application";
-	private static final String POSTS_ENDPOINT = API_URL + "/api/posts";
+	private static final String POSTS_ENDPOINT = API_URL + "/api/posts/";
 
 	private List<Post> posts = new ArrayList<Post>();
 
@@ -29,7 +30,7 @@ public class PostServiceImpl implements PostService {
 	public void initialise() {
 		client = ClientBuilder.newClient();
 	}
-	
+
 	@PreDestroy
 	public void destroy() {
 		client.close();
@@ -37,13 +38,16 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public void addPost(Post post) {
-		// TODO Auto-generated method stub
-
+		WebTarget target = client.target(POSTS_ENDPOINT);
+		Response response = target.request(MediaType.APPLICATION_JSON).post(Entity.json("{}"));
+		System.out.println(response.readEntity(String.class));
 	}
 
 	@Override
 	public void deletePost(int postId) {
-		// TODO Auto-generated method stub
+		WebTarget target = client.target("http://localhost:8080/application/api/posts/{id}").resolveTemplate("id", postId);
+		Response response = target.request(MediaType.APPLICATION_JSON).post(Entity.json(""));
+		System.out.println("RESPONSE" + response.readEntity(String.class));
 
 	}
 
@@ -51,7 +55,8 @@ public class PostServiceImpl implements PostService {
 	public List<Post> getPosts() {
 		WebTarget target = client.target(POSTS_ENDPOINT);
 		Response response = target.request(MediaType.APPLICATION_JSON).get();
-		posts = response.readEntity(new GenericType<ArrayList<Post>>() {});
+		posts = response.readEntity(new GenericType<ArrayList<Post>>() {
+		});
 		return posts;
 
 	}

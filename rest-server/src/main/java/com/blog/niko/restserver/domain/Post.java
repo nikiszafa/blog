@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @XmlRootElement
 @Entity
 @Table(name = "post")
@@ -31,6 +33,7 @@ public class Post implements Serializable {
 	private String author;
 	
 	@Column(name = "post_publish_date")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private Date publishDate;
 	
 	@Column(name = "post_is_visible")

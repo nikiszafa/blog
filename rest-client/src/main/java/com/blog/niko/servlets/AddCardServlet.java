@@ -35,7 +35,7 @@ public class AddCardServlet extends HttpServlet {
 
 		cardBean.addCard(card);
 		
-		response.sendRedirect("/blog/HomeServlet");
+		response.sendRedirect("/client/HomeServlet");
 
 	}
 

@@ -16,7 +16,7 @@ public class LogoutServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.getCreationTime();
 		session.invalidate();
-		response.sendRedirect("/blog/HomeServlet");
+		response.sendRedirect("/client/HomeServlet");
 	}
 
 

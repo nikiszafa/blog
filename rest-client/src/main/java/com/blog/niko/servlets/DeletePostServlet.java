@@ -25,7 +25,7 @@ public class DeletePostServlet extends HttpServlet {
 
 		postBean.deletePost(postId);
 
-		response.sendRedirect("/blog/BlogServlet");
+		response.sendRedirect("/client/BlogServlet");
 
 	}
 

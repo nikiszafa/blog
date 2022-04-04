@@ -18,7 +18,7 @@ public class PostDaoBean implements PostDao{
 	private EntityManager entityManager;
 
 	public void addPost(Post post) {
-
+		System.out.println("EM POST");
 		entityManager.persist(post);
 
 	}
