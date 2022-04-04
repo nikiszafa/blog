@@ -9,6 +9,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
 import com.blog.niko.restserver.dao.UserDao;
+import com.blog.niko.restserver.domain.User;
 
 @Stateless
 @Path("/users")
@@ -24,6 +25,14 @@ public class UserResource {
 		boolean isValid = userDao.validateUser(login, password);
 
 		return Response.ok(isValid).build();
+
+	}
+
+	@GET
+	@Path("{username}")
+	public Response getProfileDetails(@PathParam("username") String username) {
+		User user = userDao.getProfileDetails(username);
+		return Response.ok(user).build();
 
 	}
 

@@ -32,7 +32,7 @@ public class CardBean {
 	}
 	
 	public void deleteCard(int cardId) {
-		
+		cardService.deleteCard(cardId);
 	}
 	
 

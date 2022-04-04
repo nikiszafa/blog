@@ -34,14 +34,14 @@ public class CardServiceImpl implements CardService {
 	public void addCard(Card card) {
 		WebTarget target = client.target(CARDS_ENDPOINT);
 		Response response = target.request(MediaType.APPLICATION_JSON).post(Entity.json(card));
-		
-		
 
 	}
 
 	@Override
 	public void deleteCard(int cardId) {
-		// TODO Auto-generated method stub
+		WebTarget target = client.target("http://localhost:8080/application/api/cards/{id}").resolveTemplate("id", cardId);
+		Response response = target.request(MediaType.APPLICATION_JSON).post(Entity.json(""));
+		System.out.println("RESPONSE" + response.readEntity(String.class));
 
 	}
 

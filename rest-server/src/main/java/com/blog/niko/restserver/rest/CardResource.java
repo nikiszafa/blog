@@ -58,5 +58,12 @@ public class CardResource {
 		throw new IDNotFoundException();
 
 	}
+	
+	@POST
+	@Path("{id}")
+	public Response deleteCard(final @PathParam("id") int id) {
+		cardDao.deleteCard(id);
+		return Response.ok(id).build();
+	}
 
 }

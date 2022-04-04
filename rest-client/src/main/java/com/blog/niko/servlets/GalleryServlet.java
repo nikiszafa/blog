@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.blog.niko.beans.GalleryImageBean;
 import com.blog.niko.domain.GalleryImage;
 
-
 @WebServlet("/GalleryServlet")
 public class GalleryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

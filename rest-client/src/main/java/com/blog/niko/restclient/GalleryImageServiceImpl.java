@@ -40,16 +40,16 @@ public class GalleryImageServiceImpl implements GalleryImageService {
 	public List<GalleryImage> getGalleryImages() {
 		WebTarget target = client.target(GALLERY_ENDPOINT);
 		Response response = target.request(MediaType.APPLICATION_JSON).get();
-		galleryImages = response.readEntity(new GenericType <ArrayList<GalleryImage>>() {});
+		galleryImages = response.readEntity(new GenericType<ArrayList<GalleryImage>>() {
+		});
 		return galleryImages;
 	}
 
 	@Override
 	public void deleteGalleryImage(int galleryImageId) {
-		// TODO Auto-generated method stub
+		WebTarget target = client.target("http://localhost:8080/application/api/galleryimages/{id}").resolveTemplate("id", galleryImageId);
+		Response response = target.request(MediaType.APPLICATION_JSON).post(Entity.json(""));
 		
 	}
-	
-	
 
 }

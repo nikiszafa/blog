@@ -39,7 +39,7 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public void addPost(Post post) {
 		WebTarget target = client.target(POSTS_ENDPOINT);
-		Response response = target.request(MediaType.APPLICATION_JSON).post(Entity.json("{}"));
+		Response response = target.request(MediaType.APPLICATION_JSON).post(Entity.json(post));
 		System.out.println(response.readEntity(String.class));
 	}
 

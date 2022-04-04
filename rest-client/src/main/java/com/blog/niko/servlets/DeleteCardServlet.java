@@ -30,7 +30,7 @@ public class DeleteCardServlet extends HttpServlet {
 
 		cardBean.deleteCard(cardId);
 
-		response.sendRedirect("/blog/HomeServlet");
+		response.sendRedirect("/client/HomeServlet");
 	}
 
 }

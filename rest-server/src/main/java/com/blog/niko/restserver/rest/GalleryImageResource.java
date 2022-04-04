@@ -15,7 +15,7 @@ import com.blog.niko.restserver.dao.GalleryImageDao;
 import com.blog.niko.restserver.domain.GalleryImage;
 
 @Stateless
-@Path("galleryimages")
+@Path("/galleryimages")
 public class GalleryImageResource {
 
 	@EJB
