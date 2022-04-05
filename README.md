@@ -16,3 +16,5 @@
 ![alt text](https://github.com/nikiszafa/blog/blob/master/img/6.JPG)
 #### Po zalogowaniu mozliwosc dodawania postow i kart
 ![alt text](https://github.com/nikiszafa/blog/blob/master/img/7.JPG)
+#### Weather widget
+![alt text](https://github.com/nikiszafa/blog/tree/BlogAppEar/img/8.JPG)
