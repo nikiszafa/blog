@@ -1,6 +1,6 @@
 # blog
 ## Simple blog website
-#### standalone.bat -c standalone-full.xml
+#### standalone.bat 
 
 #### Strona z wpisami
 ![alt text](https://github.com/nikiszafa/blog/blob/master/img/2.JPG)
