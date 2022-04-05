@@ -2,7 +2,6 @@ package com.blog.niko.servlets;
 
 import java.io.IOException;
 
-import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

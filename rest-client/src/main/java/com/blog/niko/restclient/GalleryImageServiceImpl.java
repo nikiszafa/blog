@@ -33,7 +33,7 @@ public class GalleryImageServiceImpl implements GalleryImageService {
 	@Override
 	public void addGalleryImage(GalleryImage galleryImage) {
 		WebTarget target = client.target(GALLERY_ENDPOINT);
-		Response response = target.request(MediaType.APPLICATION_JSON).post(Entity.json(galleryImage));
+		target.request(MediaType.APPLICATION_JSON).post(Entity.json(galleryImage));
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class GalleryImageServiceImpl implements GalleryImageService {
 	@Override
 	public void deleteGalleryImage(int galleryImageId) {
 		WebTarget target = client.target("http://localhost:8080/application/api/galleryimages/{id}").resolveTemplate("id", galleryImageId);
-		Response response = target.request(MediaType.APPLICATION_JSON).post(Entity.json(""));
+		target.request(MediaType.APPLICATION_JSON).post(Entity.json(""));
 		
 	}
 

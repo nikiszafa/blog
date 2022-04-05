@@ -1,10 +1,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Nikodem Blog</title>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -74,32 +75,30 @@
 		</div>
 	</header>
 
-	<div class="container mt-5">
-		<div class="row">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-4 col-sm-12 col-xs-12">
+				<div class="card">
 
-			<c:forEach items="${cards}" var="card">
-				<div class="col-sm-4">
-					<div class="card text-center" style="width: 18rem;">
-						<img src="${card.imgPath}" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">${card.title}</h5>
-							<p class="card-text">${card.content}</p>
-							<a href="${card.buttonLink}" class="btn btn-primary">${card.buttonText}</a>
-							<c:if test="${not empty username }">
-								<p></p>
-								<form action="DeleteCardServlet" method="post">
-									<button type="submit" value="${card.cardId}" name="cardId"
-										class="btn btn-danger">Delete Card</button>
-								</form>
-							</c:if>
+					<h2>Warsaw</h2>
+					<h3>
+						<span>Wind ${currentWeather.windspeed} km/h</span>
+					</h3>
+					<h3>
+						<span>Elevation ${weather.elevation} m</span>
+					</h3>
+					<h1>Temperature ${currentWeather.temperature} °C</h1>
+					<div class="sky">
+						<div class="sun"></div>
+						<div class="cloud">
+							<div class="circle-small"></div>
+							<div class="circle-tall"></div>
+							<div class="circle-medium"></div>
 						</div>
 					</div>
-					<p></p>
+
 				</div>
-
-			</c:forEach>
-
-
+			</div>
 		</div>
 	</div>
 

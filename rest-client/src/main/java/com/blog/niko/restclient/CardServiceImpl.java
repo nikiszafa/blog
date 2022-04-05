@@ -33,7 +33,7 @@ public class CardServiceImpl implements CardService {
 	@Override
 	public void addCard(Card card) {
 		WebTarget target = client.target(CARDS_ENDPOINT);
-		Response response = target.request(MediaType.APPLICATION_JSON).post(Entity.json(card));
+		target.request(MediaType.APPLICATION_JSON).post(Entity.json(card));
 
 	}
 
@@ -57,7 +57,6 @@ public class CardServiceImpl implements CardService {
 
 	@Override
 	public Card getCard(int cardId) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

@@ -26,6 +26,9 @@
 				</li>
 				<li class="nav-item"><a class="nav-link" href="GalleryServlet">Gallery</a>
 				</li>
+				
+				<li class="nav-item"><a class="nav-link" href="WeatherServlet">Weather</a>
+				</li>
 
 				<c:if test="${empty username}">
 					<li class="nav-item"><a class="nav-link" href="LoginServlet">Login</a>

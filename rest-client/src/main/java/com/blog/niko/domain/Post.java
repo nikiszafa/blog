@@ -4,10 +4,12 @@ import java.io.Serializable;
 import java.sql.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
 
 
 public class Post implements Serializable {
+
+
+	private static final long serialVersionUID = 1L;
 
 	private int postId;
 
@@ -17,7 +19,6 @@ public class Post implements Serializable {
 
 	private String author;
 
-//	@javax.json.bind.annotation.JsonbDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private Date publishDate;

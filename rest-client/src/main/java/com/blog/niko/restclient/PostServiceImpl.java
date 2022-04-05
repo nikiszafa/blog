@@ -63,13 +63,11 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public Post getPost(int postId) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void updatePost(Post post, int id) {
-		// TODO Auto-generated method stub
 
 	}
 

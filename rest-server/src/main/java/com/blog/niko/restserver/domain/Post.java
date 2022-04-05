@@ -18,6 +18,9 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @Table(name = "post")
 public class Post implements Serializable {
 	
+
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="post_id")

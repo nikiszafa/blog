@@ -3,14 +3,12 @@ package com.blog.niko.restserver.dao.exceptions;
 
 public class IDNotFoundException extends Exception {
 
-	private String message;
-
+	private static final long serialVersionUID = 1L;
+	
 	public IDNotFoundException() {
-		this.message = "ID not found";
 	}
 
 	public IDNotFoundException(String message) {
-		this.message = message;
 	}
 
 }

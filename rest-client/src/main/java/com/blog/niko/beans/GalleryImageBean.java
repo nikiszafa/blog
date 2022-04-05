@@ -7,7 +7,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
 import com.blog.niko.domain.GalleryImage;
-import com.blog.niko.restclient.GalleryImageService;
 import com.blog.niko.restclient.GalleryImageServiceImpl;
 
 @RequestScoped
