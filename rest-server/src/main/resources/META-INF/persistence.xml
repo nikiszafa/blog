@@ -15,8 +15,19 @@
 			<property name="hibernate.show_sql" value="false" />
 			<property name="hibernate.id.new_generator_mappings"
 				value="false" />
-			<property name="hibernate.dialect"
-				value="org.hibernate.dialect.PostgreSQLDialect" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+			<property name="hibernate.jdbc.batch_size" value="20"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.id.new_generator_mappings" value="true"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="org.hibernate.envers.revision_field_name" value="revision_number"/>
+            <property name="org.hibernate.envers.revision_type_field_name" value="revision_type"/>
+            <property name="hibernate.cache.use_second_level_cache" value="true"/>
+            <property name="hibernate.cache.use_query_cache" value="true"/>
+            <property name="hibernate.cache.region_prefix" value=""/>
+            <property name="hibernate.cache.infinispan.statistics" value="false"/>
+			
 
 
 		</properties>
