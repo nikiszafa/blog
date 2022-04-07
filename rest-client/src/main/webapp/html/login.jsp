@@ -30,7 +30,7 @@
 
 				<li class="nav-item"><a class="nav-link" href="WeatherServlet">Weather</a>
 				</li>
-				
+
 				<c:if test="${empty username}">
 					<li class="nav-item"><a class="nav-link" href="LoginServlet">Login</a>
 					</li>
@@ -78,6 +78,11 @@
 		<div class="row">
 			<div class="col">
 
+				<c:if test="${not empty error}">
+
+					<div class="alert alert-danger" role="alert">${error}</div>
+
+				</c:if>
 
 				<form action="LoginServlet" method="post">
 					<div class="mb-3 mt-3">
@@ -98,13 +103,6 @@
 		</div>
 	</div>
 
-<c:if test="${not empty error}">
-	<% String message = (String)request.getAttribute("error");%>
-	<script type="text/javascript">
-    	var msg = "<%=message%>";
-    	alert(msg);
-	</script>
-</c:if>
 
 </body>
 </html>
