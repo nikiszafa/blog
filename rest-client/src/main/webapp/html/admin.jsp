@@ -122,9 +122,9 @@
 					</div>
 
 					<div class="form-group">
-						<label for="imgPath">Img Path</label> <input maxlength=300
+						<label for="imgPath">Img Link</label> <input maxlength=300
 							type="text" class="form-control" id="imgPath"
-							placeholder="Image Path" name="imgPath" required>
+							placeholder="Image Link" name="imgPath" required>
 					</div>
 
 					<div class="form-group">
