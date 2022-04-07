@@ -97,5 +97,14 @@
 			<div class="col"></div>
 		</div>
 	</div>
+
+<c:if test="${not empty error}">
+	<% String message = (String)request.getAttribute("error");%>
+	<script type="text/javascript">
+    	var msg = "<%=message%>";
+    	alert(msg);
+	</script>
+</c:if>
+
 </body>
 </html>
