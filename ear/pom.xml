@@ -29,6 +29,13 @@
 			<version>0.0.1-SNAPSHOT</version>
 			<type>war</type>
 		</dependency>
+
+		<dependency>
+			<groupId>com.blog.niko</groupId>
+			<artifactId>gwt-frontend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
 		
 	</dependencies>
 
@@ -52,6 +59,12 @@
 								<artifactId>rest-client</artifactId>
 								<uri>rest-client-0.0.1-SNAPSHOT.war</uri>
 								<contextRoot>/client</contextRoot>
+							</webModule>
+							<webModule>
+								<groupId>com.blog.niko</groupId>
+								<artifactId>gwt-frontend</artifactId>
+								<uri>gwt-frontend-0.0.1-SNAPSHOT.war</uri>
+								<contextRoot>/frontend</contextRoot>
 							</webModule>
 						</modules>
 					</configuration>
