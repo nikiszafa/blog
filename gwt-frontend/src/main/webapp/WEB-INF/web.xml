@@ -5,15 +5,16 @@
 
 <web-app>
 
-  <!-- Servlets -->
+<!--   Servlets -->
+
   <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>com.blog.niko.gwtfrontend.server.GreetingServiceImpl</servlet-class>
+    <servlet-name>PostServiceImpl</servlet-name>
+    <servlet-class>com.blog.niko.gwtfrontend.server.PostServiceImpl</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/MainModule/greet</url-pattern>
+    <servlet-name>PostServiceImpl</servlet-name>
+    <url-pattern>/MainModule/getPosts</url-pattern>
   </servlet-mapping>
 
   <!-- Default page to serve -->
