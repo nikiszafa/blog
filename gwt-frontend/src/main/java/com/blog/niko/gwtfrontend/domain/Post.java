@@ -1,4 +1,4 @@
-package com.blog.niko.gwtfrontend.client;
+package com.blog.niko.gwtfrontend.domain;
 
 import java.io.Serializable;
 import java.sql.Date;

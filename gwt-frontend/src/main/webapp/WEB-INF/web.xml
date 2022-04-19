@@ -5,21 +5,32 @@
 
 <web-app>
 
-<!--   Servlets -->
+	<!-- Servlets -->
 
-  <servlet>
-    <servlet-name>PostServiceImpl</servlet-name>
-    <servlet-class>com.blog.niko.gwtfrontend.server.PostServiceImpl</servlet-class>
-  </servlet>
+	<servlet>
+		<servlet-name>PostServiceImpl</servlet-name>
+		<servlet-class>com.blog.niko.gwtfrontend.server.PostServiceImpl</servlet-class>
+	</servlet>
 
-  <servlet-mapping>
-    <servlet-name>PostServiceImpl</servlet-name>
-    <url-pattern>/MainModule/getPosts</url-pattern>
-  </servlet-mapping>
+	<servlet>
+		<servlet-name>CardServiceImpl</servlet-name>
+		<servlet-class>com.blog.niko.gwtfrontend.server.CardServiceImpl</servlet-class>
+	</servlet>
 
-  <!-- Default page to serve -->
-  <welcome-file-list>
-    <welcome-file>MainModule.html</welcome-file>
-  </welcome-file-list>
+	<servlet-mapping>
+		<servlet-name>PostServiceImpl</servlet-name>
+		<url-pattern>/MainModule/getPosts</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>CardServiceImpl</servlet-name>
+		<url-pattern>/MainModule/getCards</url-pattern>
+	</servlet-mapping>
+
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>MainModule.html</welcome-file>
+	</welcome-file-list>
 
 </web-app>

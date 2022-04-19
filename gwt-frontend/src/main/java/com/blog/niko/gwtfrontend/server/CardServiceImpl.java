@@ -7,29 +7,29 @@ import java.util.logging.Logger;
 
 import javax.inject.Inject;
 
-import com.blog.niko.gwtfrontend.beans.PostBean;
-import com.blog.niko.gwtfrontend.client.PostService;
-import com.blog.niko.gwtfrontend.domain.Post;
+import com.blog.niko.gwtfrontend.beans.CardBean;
+import com.blog.niko.gwtfrontend.client.CardService;
+import com.blog.niko.gwtfrontend.domain.Card;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
-public class PostServiceImpl extends RemoteServiceServlet implements PostService {
+public class CardServiceImpl extends RemoteServiceServlet implements CardService {
 
 	@Inject
-	PostBean postBean;
+	CardBean cardBean;
 
 	private static Logger rootLogger = Logger.getLogger("");
 
 	private static final long serialVersionUID = 1L;
 
-	private List<Post> posts = new ArrayList<Post>();
+	private List<Card> cards = new ArrayList<Card>();
 
 	@Override
-	public List<Post> getPosts() {
+	public List<Card> getCards() {
 		rootLogger.log(Level.SEVERE, "IN GET POSTS: ");
 
-		posts = postBean.getPosts();
+		cards = cardBean.getCards();
 
-		return posts;
+		return cards;
 	}
 
 }
