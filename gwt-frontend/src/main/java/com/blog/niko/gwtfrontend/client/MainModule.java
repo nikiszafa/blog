@@ -33,6 +33,7 @@ public class MainModule implements EntryPoint {
 
 		refreshCardTable();
 		refreshTable();
+		deletePost(52);
 		RootPanel.get("gwtContainer").add(tabPanel);
 
 	}
@@ -59,6 +60,36 @@ public class MainModule implements EntryPoint {
 		postSvc.getPosts(callback);
 
 	}
+	
+	
+	
+	private void deletePost(int id) {
+		if(postSvc == null) {
+			postSvc = GWT.create(PostService.class);
+		}
+		
+		AsyncCallback<Boolean> callback = new AsyncCallback<Boolean>() {
+
+			@Override
+			public void onFailure(Throwable caught) {
+				rootLogger.log(Level.SEVERE, "Delete ERROR" + caught);
+				
+			}
+
+			@Override
+			public void onSuccess(Boolean result) {
+				rootLogger.log(Level.SEVERE, "Delete Success" + result);
+//				refreshTable();
+			}
+		};
+		
+		postSvc.deletePost(id, callback);
+		
+	
+		
+	}
+	
+	
 
 	private void updateTable(List<Post> result) {
 

@@ -8,5 +8,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 public interface PostServiceAsync {
 
 	void getPosts(AsyncCallback<List<Post>> callback);
+	
+	void deletePost(int i, AsyncCallback<Boolean> callback);
 
 }

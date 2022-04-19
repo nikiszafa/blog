@@ -11,4 +11,8 @@ public interface PostService extends RemoteService {
 
 	List<Post> getPosts();
 
+	boolean deletePost(int i);
+	
+	
+
 }
