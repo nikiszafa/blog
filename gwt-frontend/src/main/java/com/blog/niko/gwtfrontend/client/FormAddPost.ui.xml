@@ -1,0 +1,43 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:dp="urn:import:com.google.gwt.user.datepicker.client">
+	<ui:style>
+	.postForm-style {
+		font-weight: bold;
+		width: 50%;
+	}
+	</ui:style>
+
+	<g:HTMLPanel styleName="{style.postForm-style}">
+		<div align="center">
+
+			<g:VerticalPanel>
+				<g:Label text="Title" />
+				<g:TextBox ui:field="titleBox" />
+
+				<g:Label text="Autor" />
+				<g:TextBox ui:field="autorBox" />
+
+				<g:Label text="Date" />
+				<dp:DatePicker ui:field="dateBox" />
+
+				<g:Label text="Content" />
+				<g:TextBox ui:field="contentBox" />
+
+				<g:Label text="Image Link" />
+				<g:TextBox ui:field="imageBox" />
+
+				<g:Button ui:field="buttonSubmit" text="Submit" />
+
+			</g:VerticalPanel>
+
+
+		</div>
+
+
+
+
+
+	</g:HTMLPanel>
+</ui:UiBinder> 

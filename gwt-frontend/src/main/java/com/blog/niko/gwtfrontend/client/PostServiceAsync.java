@@ -11,4 +11,8 @@ public interface PostServiceAsync {
 	
 	void deletePost(int i, AsyncCallback<Boolean> callback);
 
+	void addPost(Post post, AsyncCallback<Boolean> callback);
+	
+	
+
 }

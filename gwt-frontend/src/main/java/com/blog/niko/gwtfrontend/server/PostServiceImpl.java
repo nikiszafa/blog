@@ -35,10 +35,20 @@ public class PostServiceImpl extends RemoteServiceServlet implements PostService
 	@Override
 	public boolean deletePost(int i) {
 		rootLogger.log(Level.SEVERE, "IN DELETE POST");
-		
+
 		postBean.deletePost(i);
-				
+
 		return true;
+	}
+
+	@Override
+	public boolean addPost(Post post) {
+
+		rootLogger.log(Level.SEVERE, "IN ADD POST");
+
+		postBean.addPost(post);
+
+		return false;
 	}
 
 }

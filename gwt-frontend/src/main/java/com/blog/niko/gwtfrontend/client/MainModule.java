@@ -8,6 +8,7 @@ import com.blog.niko.gwtfrontend.domain.Card;
 import com.blog.niko.gwtfrontend.domain.Post;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TabPanel;
@@ -19,22 +20,65 @@ public class MainModule implements EntryPoint {
 
 	private PostServiceAsync postSvc = GWT.create(PostService.class);
 	private CardServiceAsync cardSvc = GWT.create(CardService.class);
+	private LoginServiceAsync loginSvc = GWT.create(LoginService.class);
 
 	private VerticalPanel mainPanel = new VerticalPanel();
 	private VerticalPanel cardPanel = new VerticalPanel();
+	private VerticalPanel loginPanel = new VerticalPanel();
+	private VerticalPanel adminPanel = new VerticalPanel();
 
 	public void onModuleLoad() {
 
 		TabPanel tabPanel = new TabPanel();
+		tabPanel.setWidth("100%");
+
+		Login login = new Login();
+		loginPanel.add(login);
+
+		FormAddPost formAddPost = new FormAddPost();
+		FormAddCard formAddCard = new FormAddCard();
+		AdminPanel admin = new AdminPanel();
+		admin.table.setWidget(1, 0, formAddPost);
+		admin.table.setWidget(1, 1, formAddCard);
+
+		adminPanel.add(admin);
 
 		tabPanel.add(mainPanel, "Blog");
 		tabPanel.add(cardPanel, "About me");
+		tabPanel.add(loginPanel, "Login");
+		tabPanel.add(adminPanel, "Admin");
 		tabPanel.selectTab(0);
+		
 
 		refreshCardTable();
 		refreshTable();
-		deletePost(52);
 		RootPanel.get("gwtContainer").add(tabPanel);
+
+	}
+
+	private void validateUser(String login, String password) {
+		if (loginSvc == null) {
+			loginSvc = GWT.create(LoginService.class);
+		}
+
+		AsyncCallback<Boolean> callback = new AsyncCallback<Boolean>() {
+
+			@Override
+			public void onFailure(Throwable caught) {
+				rootLogger.log(Level.SEVERE, "Login " + caught);
+
+			}
+
+			@Override
+			public void onSuccess(Boolean result) {
+				if (result) {
+					Window.alert("LOGIN success");
+				}
+
+			}
+		};
+
+		loginSvc.isValidUser(login, password, callback);
 
 	}
 
@@ -60,20 +104,18 @@ public class MainModule implements EntryPoint {
 		postSvc.getPosts(callback);
 
 	}
-	
-	
-	
+
 	private void deletePost(int id) {
-		if(postSvc == null) {
+		if (postSvc == null) {
 			postSvc = GWT.create(PostService.class);
 		}
-		
+
 		AsyncCallback<Boolean> callback = new AsyncCallback<Boolean>() {
 
 			@Override
 			public void onFailure(Throwable caught) {
 				rootLogger.log(Level.SEVERE, "Delete ERROR" + caught);
-				
+
 			}
 
 			@Override
@@ -82,14 +124,10 @@ public class MainModule implements EntryPoint {
 //				refreshTable();
 			}
 		};
-		
+
 		postSvc.deletePost(id, callback);
-		
-	
-		
+
 	}
-	
-	
 
 	private void updateTable(List<Post> result) {
 

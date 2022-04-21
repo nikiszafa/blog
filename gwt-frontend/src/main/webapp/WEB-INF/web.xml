@@ -16,6 +16,11 @@
 		<servlet-name>CardServiceImpl</servlet-name>
 		<servlet-class>com.blog.niko.gwtfrontend.server.CardServiceImpl</servlet-class>
 	</servlet>
+	
+	<servlet>
+		<servlet-name>LoginServiceImpl</servlet-name>
+		<servlet-class>com.blog.niko.gwtfrontend.server.LoginServiceImpl</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>PostServiceImpl</servlet-name>
@@ -26,6 +31,11 @@
 	<servlet-mapping>
 		<servlet-name>CardServiceImpl</servlet-name>
 		<url-pattern>/MainModule/getCards</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>LoginServiceImpl</servlet-name>
+		<url-pattern>/MainModule/loginService</url-pattern>
 	</servlet-mapping>
 
 	<!-- Default page to serve -->

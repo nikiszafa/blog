@@ -34,10 +34,12 @@ public class Cards extends Composite {
 		table.setText(0, 3, "Image");
 
 		table.getColumnFormatter().setWidth(0, "10%");
-		table.getColumnFormatter().setWidth(1, "35%");
+		table.getColumnFormatter().setWidth(1, "40%");
 		table.getColumnFormatter().setWidth(2, "10%");
-		table.getColumnFormatter().setWidth(3, "35%");
-		table.getColumnFormatter().setWidth(4, "10%");
+		table.getColumnFormatter().setWidth(3, "40%");
+
+		table.getRowFormatter().addStyleName(0, "tableHeader");
+		table.getRowFormatter().addStyleName(1, "tableHeader");
 
 		table.insertRow(1);
 
@@ -55,6 +57,12 @@ public class Cards extends Composite {
 		table.setText(row, 1, card.getContent());
 		table.setWidget(row, 2, btn);
 		table.setWidget(row, 3, img);
+
+		table.getRowFormatter().addStyleName(row, "tableContent");
+
+		if (row % 2 == 0) {
+			table.getRowFormatter().addStyleName(row, "tableContentEven");
+		}
 
 	}
 }

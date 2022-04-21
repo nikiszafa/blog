@@ -32,4 +32,16 @@ public class CardServiceImpl extends RemoteServiceServlet implements CardService
 		return cards;
 	}
 
+	@Override
+	public Boolean addCard(Card card) {
+		cardBean.addCard(card);
+		return true;
+	}
+
+	@Override
+	public Boolean deleteCard(int id) {
+		cardBean.deleteCard(id);
+		return true;
+	}
+
 }

@@ -13,6 +13,8 @@ public interface PostService extends RemoteService {
 
 	boolean deletePost(int i);
 	
+	boolean addPost(Post post);
+	
 	
 
 }
