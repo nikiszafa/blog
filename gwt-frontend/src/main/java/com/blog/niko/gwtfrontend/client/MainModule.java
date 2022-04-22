@@ -8,10 +8,8 @@ import com.blog.niko.gwtfrontend.domain.Card;
 import com.blog.niko.gwtfrontend.domain.Post;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.google.gwt.user.client.ui.TabPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class MainModule implements EntryPoint {
@@ -20,65 +18,40 @@ public class MainModule implements EntryPoint {
 
 	private PostServiceAsync postSvc = GWT.create(PostService.class);
 	private CardServiceAsync cardSvc = GWT.create(CardService.class);
-	private LoginServiceAsync loginSvc = GWT.create(LoginService.class);
-
-	private VerticalPanel mainPanel = new VerticalPanel();
-	private VerticalPanel cardPanel = new VerticalPanel();
-	private VerticalPanel loginPanel = new VerticalPanel();
-	private VerticalPanel adminPanel = new VerticalPanel();
+	
+//	private VerticalPanel TabModule = new VerticalPanel();
+//	private VerticalPanel mainPanel = new VerticalPanel();
+//	private VerticalPanel cardPanel = new VerticalPanel();
+//	private VerticalPanel loginPanel = new VerticalPanel();
+//	private VerticalPanel adminPanel = new VerticalPanel();
+	TabPanel tabPanel = new TabPanel();
 
 	public void onModuleLoad() {
 
-		TabPanel tabPanel = new TabPanel();
+		AppController appController = new AppController();
+
 		tabPanel.setWidth("100%");
 
-		Login login = new Login();
-		loginPanel.add(login);
+//		Login login = new Login();
+//		loginPanel.add(login);
 
-		FormAddPost formAddPost = new FormAddPost();
-		FormAddCard formAddCard = new FormAddCard();
+//		FormAddPost formAddPost = new FormAddPost();
+//		FormAddCard formAddCard = new FormAddCard();
 		AdminPanel admin = new AdminPanel();
-		admin.table.setWidget(1, 0, formAddPost);
-		admin.table.setWidget(1, 1, formAddCard);
+//		admin.table.setWidget(1, 0, formAddPost);
+//		admin.table.setWidget(1, 1, formAddCard);
+//
+//		adminPanel.add(admin);
 
-		adminPanel.add(admin);
-
-		tabPanel.add(mainPanel, "Blog");
-		tabPanel.add(cardPanel, "About me");
-		tabPanel.add(loginPanel, "Login");
-		tabPanel.add(adminPanel, "Admin");
-		tabPanel.selectTab(0);
-		
+//		tabPanel.add(mainPanel, "Blog");
+//		tabPanel.add(cardPanel, "About me");
+//		tabPanel.add(loginPanel, "Login");
+//		tabPanel.add(adminPanel, "Admin");
+//		tabPanel.selectTab(0);
 
 		refreshCardTable();
 		refreshTable();
 		RootPanel.get("gwtContainer").add(tabPanel);
-
-	}
-
-	private void validateUser(String login, String password) {
-		if (loginSvc == null) {
-			loginSvc = GWT.create(LoginService.class);
-		}
-
-		AsyncCallback<Boolean> callback = new AsyncCallback<Boolean>() {
-
-			@Override
-			public void onFailure(Throwable caught) {
-				rootLogger.log(Level.SEVERE, "Login " + caught);
-
-			}
-
-			@Override
-			public void onSuccess(Boolean result) {
-				if (result) {
-					Window.alert("LOGIN success");
-				}
-
-			}
-		};
-
-		loginSvc.isValidUser(login, password, callback);
 
 	}
 
@@ -137,7 +110,8 @@ public class MainModule implements EntryPoint {
 			home.insertPost(post);
 		}
 
-		mainPanel.add(home);
+		//mainPanel.add(home);
+		tabPanel.blogPanel.add(home);
 
 	}
 
@@ -173,7 +147,8 @@ public class MainModule implements EntryPoint {
 			cards.insertCard(card);
 		}
 
-		cardPanel.add(cards);
+		//cardPanel.add(cards);
+		tabPanel.aboutPanel.add(cards);
 
 	}
 }

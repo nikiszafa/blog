@@ -26,5 +26,6 @@
 	<source path='client' />
 	<source path='shared' />
 	<source path='domain' />
+	<source path='events' />
 
 </module>

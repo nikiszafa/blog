@@ -9,6 +9,9 @@ import com.google.gwt.user.client.ui.Widget;
 
 public class AdminPanel extends Composite {
 
+	private FormAddPost formAddPost = new FormAddPost();
+	private FormAddCard formAddCard = new FormAddCard();
+
 	private static AdminPanelUiBinder uiBinder = GWT.create(AdminPanelUiBinder.class);
 
 	interface AdminPanelUiBinder extends UiBinder<Widget, AdminPanel> {
@@ -28,12 +31,14 @@ public class AdminPanel extends Composite {
 
 		table.setText(0, 0, "Add Post");
 		table.setText(0, 1, "Add Card");
-		
+
 		table.getRowFormatter().addStyleName(0, "tableHeader");
 		table.getRowFormatter().addStyleName(1, "tableHeader");
-		
+
 		table.insertRow(1);
 
+		table.setWidget(1, 0, formAddPost);
+		table.setWidget(1, 1, formAddCard);
 	}
 
 }

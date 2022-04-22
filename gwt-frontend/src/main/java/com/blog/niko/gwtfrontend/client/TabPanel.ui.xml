@@ -1,0 +1,42 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+	.important {
+		font-weight: bold;
+	}
+	</ui:style>
+
+	<g:TabPanel>
+		<g:Tab text="Blog">
+			<g:VerticalPanel ui:field="blogPanel">
+
+			</g:VerticalPanel>
+
+		</g:Tab>
+
+		<g:Tab text="About me">
+			<g:VerticalPanel ui:field="aboutPanel">
+
+			</g:VerticalPanel>
+		</g:Tab>
+
+		<g:Tab text="Login">
+			<g:VerticalPanel ui:field="loginPanel">
+
+			</g:VerticalPanel>
+		</g:Tab>
+
+		<g:Tab text="Admin">
+			<g:VerticalPanel ui:field="adminPanel">
+
+			</g:VerticalPanel>
+		</g:Tab>
+
+	</g:TabPanel>
+
+
+
+
+
+</ui:UiBinder> 
