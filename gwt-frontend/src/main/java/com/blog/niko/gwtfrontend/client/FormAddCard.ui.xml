@@ -4,31 +4,42 @@
 	<ui:style>
 	.cardForm-style {
 		font-weight: bold;
-		width: 50%;
+		width: 100%;
+	}
+	
+	.textbox-style {
+		width: 150%;
+		margin-top: 5%;
 	}
 	</ui:style>
 
 	<g:HTMLPanel styleName="{style.cardForm-style}">
 
-		<div align="center">
+		<div>
 
 			<g:VerticalPanel>
 				<g:Label text="Title" />
-				<g:TextBox ui:field="titleBox" />
+				<g:TextBox ui:field="titleBox"
+					styleName="{style.textbox-style}" />
 
 				<g:Label text="Img Link" />
-				<g:TextBox ui:field="imgBox" />
+				<g:TextBox ui:field="imgBox"
+					styleName="{style.textbox-style}" />
 
 				<g:Label text="Content" />
-				<g:TextBox ui:field="contentBox" />
+				<g:TextArea ui:field="contentBox"
+					styleName="{style.textbox-style}" />
 
 				<g:Label text="Button Text" />
-				<g:TextBox ui:field="buttonTextBox" />
+				<g:TextBox ui:field="buttonTextBox"
+					styleName="{style.textbox-style}" />
 
 				<g:Label text="Button Link" />
-				<g:TextBox ui:field="buttonLinkBox" />
+				<g:TextBox ui:field="buttonLinkBox"
+					styleName="{style.textbox-style}" />
 
-				<g:Button ui:field="buttonSubmit" text="Submit" />
+				<g:Button ui:field="buttonSubmit" text="Submit"
+					styleName="{style.textbox-style}" />
 
 			</g:VerticalPanel>
 

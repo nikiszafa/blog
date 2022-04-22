@@ -5,39 +5,52 @@
 	<ui:style>
 	.postForm-style {
 		font-weight: bold;
-		width: 50%;
+		width: 100%;
 	}
+	
+	.textbox-style {
+		width: 150%;
+		margin-top: 5%;
+	}
+
+
 	</ui:style>
 
-	<g:HTMLPanel styleName="{style.postForm-style}">
-		<div align="center">
 
-			<g:VerticalPanel>
-				<g:Label text="Title" />
-				<g:TextBox ui:field="titleBox" />
+	<g:VerticalPanel>
 
-				<g:Label text="Autor" />
-				<g:TextBox ui:field="autorBox" />
+		<g:VerticalPanel>
+			<g:Label text="Title" />
+			<g:TextBox ui:field="titleBox"
+				styleName="{style.textbox-style}" />
 
-				<g:Label text="Date" />
-				<dp:DatePicker ui:field="dateBox" />
+			<g:Label text="Autor" />
+			<g:TextBox ui:field="autorBox"
+				styleName="{style.textbox-style}" />
 
-				<g:Label text="Content" />
-				<g:TextBox ui:field="contentBox" />
+			<g:Label text="Date" />
+			<dp:DatePicker ui:field="dateBox"
+				styleName="{style.textbox-style}" />
 
-				<g:Label text="Image Link" />
-				<g:TextBox ui:field="imageBox" />
+			<g:Label text="Content" />
+			<g:TextArea ui:field="contentBox"
+				styleName="{style.textbox-style}" />
 
-				<g:Button ui:field="buttonSubmit" text="Submit" />
+			<g:Label text="Image Link" />
+			<g:TextBox ui:field="imageBox"
+				styleName="{style.textbox-style}" />
 
-			</g:VerticalPanel>
+			<g:Button ui:field="buttonSubmit" text="Submit"
+				styleName="{style.textbox-style}" />
+
+		</g:VerticalPanel>
 
 
-		</div>
+	</g:VerticalPanel>
 
 
 
 
 
-	</g:HTMLPanel>
+
 </ui:UiBinder> 
